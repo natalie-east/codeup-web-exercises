@@ -5,5 +5,5 @@ alert("You just won a new car!");
 alert("I'm just playin', enter your e-mail");
 confirmed = confirm('Are you sure you want to do XYZ?');
 
-var userInput = prompt('Please type your first name:');
-console.log('first name: ' + userInput);
+var userInput = prompt('Please type something:');
+console.log('The user entered: ' + userInput);
