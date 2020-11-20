@@ -1,0 +1,32 @@
+.fancy-header {
+    color:rebeccapurple;
+}
+h1{
+    background-color:bisque;text-decoration: underline;
+}
+h1.fancy-header{
+    color:mediumvioletred;
+}
+
+h1{ text-align: center; }
+
+body { background-color: #AF7959; }
+
+body { background-image: url("https://images.pexels.com/photos/1098520/pexels-photo-1098520.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"); }
+
+ul {
+    list-style: none;
+}
+ul li::before {
+    content: "";
+    background-image: url(https://media.giphy.com/media/iJDtcUXJiWwNLupfF6/giphy.gif);
+    background-size: contain;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    position: relative;
+    top: 0.1rem;
+    margin-right: 0.2rem;
+}
+body { font-style: normal; }
+body { font-family: monospace; }
