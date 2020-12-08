@@ -43,16 +43,26 @@
         console.log(listItems);
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for (let i = 0; i < listItems.length; i++) {
-        if( )
-        }
+        // for (let i = 0; i < listItems.length; i++) {
+        //     var listItem=listItems[i]
+        //     if(i % 2 === 0);
+        //
+        // }
         //how do i set up this for loop with data dbid//
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName('sub-paragraph');
 console.log(subParagraphs);
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs.innerText='Mission Accomplished';
+
+        let topHeader = document.getElementById("main-header");
+        topHeader.addEventListener("mouseover", function(){
+  console.log("header moused over")
+
+})
+        var topSeller1 = document.getElementsByTagName("li")[0];
     })();
+
 </script>
 </body>
 </html>
