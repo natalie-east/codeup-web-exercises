@@ -8,11 +8,11 @@
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
-    <li data-dbid="every 1">Item 1</li>
-    <li data-dbid="other 2">Item 2</li>
-    <li data-dbid="every 3">Item 3</li>
-    <li data-dbid="other 4">Item 4</li>
-    <li data-dbid="every 5">Item 5</li>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
 </ul>
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
@@ -39,15 +39,16 @@
         // TODO: Set the text color of subHeader to blue
             subHeader.style.backgroundColor="blue";
         // TODO: Uncomment the next line and get all list items
-        let listItems =document.getElementsByTagName('every');
-        console.log(listItems);
+        let listItems =document.getElementsByTagName('li');
+        console.log(listItems.length);
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        // for (let i = 0; i < listItems.length; i++) {
-        //     var listItem=listItems[i]
-        //     if(i % 2 === 0);
-        //
-        // }
+         for (let i = 0; i < listItems.length; i++) {
+             if(i % 2 === 0){
+                 listItems[i].style.color='pink';
+             }
+
+        }
         //how do i set up this for loop with data dbid//
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         let subParagraphs = document.getElementsByClassName('sub-paragraph');
