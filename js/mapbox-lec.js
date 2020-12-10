@@ -50,10 +50,14 @@ var marker = new mapboxgl.Marker({
 // TODO TOGETHER: Add a popup to the map over codeup. Set the html as a paragraph that says "Codeup Rocks!"
 // TODO TOGETHER: Comment out the popup we just added. Add a popup to the alamo marker.
 
-    // var popup = new mapboxgl.Popup()
-    //    .setLngLat([-98.4936, 29.4241])
-    //     .setHTML("<p>Hello World!</p>")
-    //     .addTo(map);
+var popup = new mapboxgl.Popup({
+    className: 'codeup-popup'
+})
+    .setLngLat([-98.48957136173456, 29.42686055035059])
+    .setHTML("<p>Codeup Rocks!</p>")
+    .addTo(map);
+
+marker.setPopup(popup);
 
 // TODO: Review the popup docs. What are some additional options we can pass to the popup?
 // TODO: Try setting the text by using ".setText()" instead of ".setHTML()"
@@ -62,29 +66,30 @@ var marker = new mapboxgl.Marker({
  * 					Geocoder
  *********************************************/
 // Geocoding Docs --> https://docs.mapbox.com/api/search/#geocoding
-let searchString = prompt('Where we bout to eat at?')
+let searchString;
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
-geocode(searchString , mapboxToken).then(function (result){
-    console.log(result);
-    //map.setCenter(result);
-    map.flyTo({
-        center:result,
-        zoom: 14,
-        speed: 1,
-        curve:1,
-        }
-    )
-    map.jumpTo({center: result});
-    //map.setZoom(15);
-    marker.setLngLat(result);
+document.getElementById("search-button");
+    searchString = prompt("What would you like to search?");
+    geocode(searchString, mapboxToken).then(function(result){
+        console.log(result);
+        // map.setCenter(result); // i.e. map.setCenter([-98.48, 29.426])
+        map.flyTo({
+            center: result,
+            zoom: 14,
+            speed: 4,
+            curve: 1,
+        })
+        marker.setLngLat(result);
+        // Want to add a popup that displays the name of the location at the LONG / LAT coordinates we just found
+        reverseGeocode(result, mapboxToken).then(function(placeName) {
+            // set the text of the popup to "New York City" (for example)
+            console.log("after reverse geocode, the place name is: " + (placeName));
+            popup.setText(placeName);
+            // the popup is already added to the marker, so NO need to add it again with marker.setPopup!
 
+        })
+    })
 
-map.flyTo({
-    enter: result,
-    zoom: 14,
-    speed: 0.2,
-    curve: 1,
-})
 // map.setZoom(20);
 // marker.setLngLat(result);
 // })
