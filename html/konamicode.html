@@ -7,21 +7,110 @@
 <body>
 <h1>Konami Code</h1>
 
+<p>"Begin today!" That's all the note said. There was no indication from where it came or who may have written it. Had it been meant for someone else? Meghan looked around the room, but nobody made eye contact back. For a brief moment, she thought it might be a message for her to follow her dreams, but ultimately decided it was easier to ignore it as she crumpled it up and threw it away.</p>
+<p>He was an expert but not in a discipline that anyone could fully appreciate. He knew how to hold the cone just right so that the soft server ice-cream fell into it at the precise angle to form a perfect cone each and every time. It had taken years to perfect and he could now do it without even putting any thought behind it. Nobody seemed to fully understand the beauty of this accomplishment except for the new worker who watched in amazement.</p>
+<p>Indescribable oppression, which seemed to generate in some unfamiliar part of her consciousness, filled her whole being with a vague anguish. It was like a shadow, like a mist passing across her soul's summer day. It was strange and unfamiliar; it was a mood. She did not sit there inwardly upbraiding her husband, lamenting at Fate, which had directed her footsteps to the path which they had taken. She was just having a good cry all to herself. The mosquitoes made merry over her, biting her firm, round arms and nipping at her bare insteps.</p>
+<p>It was a weird concept. Why would I really need to generate a random paragraph? Could I actually learn something from doing so? All these questions were running through her head as she pressed the generate button. To her surprise, she found what she least expected to see.</p>
+<p>According to the caption on the bronze marker placed by the Multnomah Chapter of the Daughters of the American Revolution on May 12, 1939, “College Hall (is) the oldest building in continuous use for Educational purposes west of the Rocky Mountains. Here were educated men and women who have won recognition throughout the world in all the learned professions.”</p>
+<p>"Begin today!" That's all the note said. There was no indication from where it came or who may have written it. Had it been meant for someone else? Meghan looked around the room, but nobody made eye contact back. For a brief moment, she thought it might be a message for her to follow her dreams, but ultimately decided it was easier to ignore it as she crumpled it up and threw it away.</p>
+<p>He was an expert but not in a discipline that anyone could fully appreciate. He knew how to hold the cone just right so that the soft server ice-cream fell into it at the precise angle to form a perfect cone each and every time. It had taken years to perfect and he could now do it without even putting any thought behind it. Nobody seemed to fully understand the beauty of this accomplishment except for the new worker who watched in amazement.</p>
+<p>Indescribable oppression, which seemed to generate in some unfamiliar part of her consciousness, filled her whole being with a vague anguish. It was like a shadow, like a mist passing across her soul's summer day. It was strange and unfamiliar; it was a mood. She did not sit there inwardly upbraiding her husband, lamenting at Fate, which had directed her footsteps to the path which they had taken. She was just having a good cry all to herself. The mosquitoes made merry over her, biting her firm, round arms and nipping at her bare insteps.</p>
+<p>It was a weird concept. Why would I really need to generate a random paragraph? Could I actually learn something from doing so? All these questions were running through her head as she pressed the generate button. To her surprise, she found what she least expected to see.</p>
+<p>According to the caption on the bronze marker placed by the Multnomah Chapter of the Daughters of the American Revolution on May 12, 1939, “College Hall (is) the oldest building in continuous use for Educational purposes west of the Rocky Mountains. Here were educated men and women who have won recognition throughout the world in all the learned professions.”</p>
 <!-- KONAMI -->
-<div class="className"><img src "LINK TO IMAGE HERE" style="display:none" alt""/></div>
+
+<div class="className"><img src="../images/8961F16B-C912-424B-A681-FC1A02A4B67C_1_105_c.jpeg" height="1024" width="768" style="display:none" alt></div>
 <!-- /KONAMI -->
+
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
+    $("p").dblclick(function(e) {
+        $("p").css('font-size', '40px');
+
+        $(document).keyup(function(event){
         console.log(event.keyCode);
     });
-    //KONAMI CODE//
-    var secret = "3838404037393739666513"; //Konami Code
+
+        //KONAMI CODE//
+    var secret = "23221826"; //Konami Code
     var input = "";
     var timer;
     var mode = false;
     var showclassName =false
+
+    //KONAMI Keystrokes//
+    $(document).ready(function() {
+        $('#flash').hide(); });
+
+
+
+    $(document).keyup(function(e) {
+//alert(e.which);
+        input += e.which;
+        clearTimeout(timer);
+        timer = setTimeout(function() { input = ""; }, 500);
+        check_input(); });
+
+
+
+    function check_input() {
+        if(input == secret) {
+//the secret code
+            showclassName= true; }}
+
+
+    $(document).ready(function() {
+        setInterval(function() { $('#info').html('Keystroke: ' + input); }, 100); });})
+    $(function() {
+        var className = $('.className');
+        className.css("left", walking+"%");
+        var horizontal = className.css('background-position-x');
+        var flag = 0;
+        var scroll = 23;
+        console.log(walking);
+
+        $(document).on("scroll", function() {
+
+            var walking;
+            if (className === true) {
+
+                var scroll = $(document).scrollTop();
+                walking = walking - 1;
+                className.css("left", walking + "%");
+
+                if (walking == -10) {
+                    walking = 110;
+                }
+
+                if ((scroll % 3) == 0) {
+
+                    if (horizontal == "0px") {
+                        className.css("background-position-x", "-65px");
+
+                        horizontal = className.css('background-position-x');
+
+                    } else if ((horizontal == "-65px") && (flag == 0)) {
+                        className.css("background-position-x", "-130px");
+
+                        horizontal = className.css('background-position-x');
+
+                        flag = 1;
+                    } else if ((horizontal == "-65px") && (flag == 1)) {
+                        className.css("background-position-x", "0px");
+
+                        horizontal = className.css('background-position-x');
+
+                        flag = 0;
+                    } else if (horizontal == "-130px") {
+                        className.css("background-position-x", "-65px");
+
+                        horizontal = className.css('background-position-x');
+
+                    }
+                }
+            } }); });
+
 
 </script>
 </body>
