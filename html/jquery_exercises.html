@@ -14,20 +14,32 @@ $(document).ready(function(){
 alert("The window document is completely ready!");
 });
 </script>
-<h1 class="codeup">Oh Happy Day!</h1>
-<p>The headphones were on. They had been utilized on purpose. She could hear her mom yelling in the background, but couldn't make out exactly what the yelling was about. That was exactly why she had put them on. She knew her mom would enter her room at any minute, and she could pretend that she hadn't heard any of the previous yelling.</p>
+<h1 id="codeup">Oh Happy Day!</h1>
+<p id="talk">The headphones were on. They had been utilized on purpose. She could hear her mom yelling in the background, but couldn't make out exactly what the yelling was about. That was exactly why she had put them on. She knew her mom would enter her room at any minute, and she could pretend that she hadn't heard any of the previous yelling.</p>
 <br>
 <div class="codeup">Yass!</div>
-   <p> What was beyond the bend in the stream was unknown. Both were curious, but only one was brave enough to want to explore. That was the problem. There was always one that let fear rule her life.</p>
+   <p id="talking"> What was beyond the bend in the stream was unknown. Both were curious, but only one was brave enough to want to explore. That was the problem. There was always one that let fear rule her life.</p>
 
-<ul class="codeup">
+<ul id="flowers">
     <li>Rose</li>
     <li>Lily</li>
     <li>Lavender</li>
 </ul>
 <script>
-    $('li').css('font-size', '12px');
-    $('.codeup, p, li').css('background-color', 'pink');
+    $('#codeup').click(function() {
+        alert('h1 with id "codeup" was clicked');
+    });
+    $('#talk').dblclick(function(e) {
+        $(this).css('background-color', '#FF0');
+    });
+    $('#flowers').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', 'black');
+        }
+        );
 </script>
 
 </body>
